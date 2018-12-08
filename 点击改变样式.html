@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>点击改变样式</title>
+  <style>
+    #app {
+      min-width: 100vw;
+      min-height: 100vh;
+      border: 1px green solid;
+    }
+
+    #app .icon {
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <span class="icon">123456</span>
+  </div>
+  <script>
+    const app = document.querySelector("#app")
+    const icon = document.querySelector(".icon")
+
+    app.addEventListener("click", e => {
+      if (e.target === icon) {
+        return;
+      }
+      // 非空白处才去除 border
+      icon.style.border = "none";
+    })
+
+    icon.addEventListener("click", e => {
+      // 禁止冒泡
+      e.stopPropagation()
+      // 更改样式
+      icon.style.border = "1px solid red";
+    })
+  </script>
+</body>
+
+</html>
