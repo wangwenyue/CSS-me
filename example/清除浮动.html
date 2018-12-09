@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>清除浮动</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .parent {
+      border: 1px green solid;
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .child {
+      text-align: center;
+    }
+
+    .child:nth-child(1) {
+      float: left;
+      background: yellow;
+      width: 30%;
+    }
+
+    .child:nth-child(2) {
+      float: right;
+      background: pink;
+      width: 70%;
+    }
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='parent clearfix'>
+    <div class='child'>child1</div>
+    <div class='child'>child2</div>
+  </div>
+</body>
+
+</html>
