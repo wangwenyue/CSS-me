@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>水平居中</title>
+  <style>
+    .p1 {
+      border: 1px green solid;
+    }
+
+    .c1 {
+      border: 1px red solid;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .p2 {
+      border: 1px green solid;
+    }
+
+    .c2 {
+      border: 1px red solid;
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .p3 {
+      border: 1px green solid;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class='p1'>
+    <div class="c1">p1, c1 均为块元素，child宽度不确定，直接让左右 margin 相等即可</div>
+  </div>
+  <div class='p2'>
+    <div class="c2">p2, c2 均为块元素，child宽度确定，margin: 0 auto; 即可</div>
+  </div>
+  <div class='p3'>
+    inline 元素居中，直接 text-align: center;
+  </div>
+</body>
+</html>
